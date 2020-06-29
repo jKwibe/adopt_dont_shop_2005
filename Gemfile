@@ -40,6 +40,9 @@ group :development, :test do
   gem 'pry'
   gem 'simplecov'
   gem 'shoulda-matchers'
+  gem 'factory_bot_rails', '~> 6.0'
+  gem 'table_print', '~> 1.5', '>= 1.5.7'
+  gem 'better_errors', '~> 2.7', '>= 2.7.1'
 end
 
 group :development do
