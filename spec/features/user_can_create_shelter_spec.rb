@@ -17,12 +17,11 @@ RSpec.describe 'visit /shelter/:id', type: :feature do
 
     it 'did not save shelter' do
       visit "/shelters/new"
-      fill_in :name, with: ""
-      fill_in :address, with: ""
       fill_in :city, with: "Heaneyville"
       fill_in :state, with: "IN"
       fill_in :zip, with: "76025"
 
+      click_button "Submit"
       expect(current_path).to eq("/shelters/new")
     end
 

@@ -16,9 +16,10 @@ class SheltersController < ApplicationController
     shelter.save
     if !shelter.save
       redirect_to "/shelters/new"
+    else
+      redirect_to "/shelters"
     end
 
-    redirect_to "/shelters"
   end
 
   private
