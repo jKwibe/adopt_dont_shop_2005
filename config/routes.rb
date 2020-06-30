@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   post "/shelters", to: 'shelters#create'
   patch "/shelters/:shelter_id", to: 'shelters#update'
+  delete "/shelters/:shelter_id", to: 'shelters#destroy'
 end
