@@ -15,7 +15,7 @@ RSpec.describe 'visit /shelter/:id', type: :feature do
       find_field(:zip)
     end
 
-    it 'can create shelter' do
+    it 'did not save shelter' do
       visit "/shelters/new"
       fill_in :name, with: ""
       fill_in :address, with: ""
@@ -24,6 +24,10 @@ RSpec.describe 'visit /shelter/:id', type: :feature do
       fill_in :zip, with: "76025"
 
       expect(current_path).to eq("/shelters/new")
+    end
+
+    it 'can create shelter' do
+      visit "/shelters/new"
 
       fill_in :name, with: "The Dark Knight Returns 23"
       fill_in :address, with:"759 Balistreri Walk, Heaneyville, IN 76025"
