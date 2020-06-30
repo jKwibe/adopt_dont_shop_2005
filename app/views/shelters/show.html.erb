@@ -5,3 +5,4 @@
 <%= @shelter.zip %>
 
 <%= link_to "edit", "/shelters/#{@shelter.id}/edit" %>
+<%= link_to "delete", "/shelters/#{@shelter.id}", method: :delete %>
