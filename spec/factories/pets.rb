@@ -6,6 +6,5 @@ FactoryBot.define do
     sex { Faker::Gender.short_binary_type.upcase }
     image { Faker::Avatar.image( size: "300x300", format: "jpg") }
     description {Faker::Lorem.paragraph(sentence_count: 3)}
-    status {["adoptible", "pending"].sample}
   end
 end
