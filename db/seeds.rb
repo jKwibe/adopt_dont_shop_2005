@@ -8,6 +8,21 @@
 require "factory_bot_rails"
 include FactoryBot::Syntax::Methods
 
-5.times do
-  create(:shelter)
-end
+
+@shelter_1 = create(:shelter)
+@shelter_2 = create(:shelter)
+@shelter_3 = create(:shelter)
+@shelter_4 = create(:shelter)
+
+@pet_1 = create(:pet, shelter: @shelter_1)
+@pet_2 = create(:pet, shelter: @shelter_3)
+@pet_3 = create(:pet, shelter: @shelter_4)
+@pet_4 = create(:pet, shelter: @shelter_1)
+@pet_5 = create(:pet, shelter: @shelter_2)
+@pet_6 = create(:pet, shelter: @shelter_2)
+@pet_7 = create(:pet, shelter: @shelter_1)
+@pet_8 = create(:pet, shelter: @shelter_3)
+@pet_9 = create(:pet, shelter: @shelter_2)
+@pet_10 = create(:pet, shelter: @shelter_4)
+@pet_11 = create(:pet, shelter: @shelter_4)
+@pet_12 = create(:pet, shelter: @shelter_3)
