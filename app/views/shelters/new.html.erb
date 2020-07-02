@@ -1,9 +1,33 @@
 
 <%= form_tag('/shelters') do %>
-  <%= text_field_tag :name %>
-  <%= text_field_tag :address %>
-  <%= text_field_tag :city%>
-  <%= text_field_tag :state %>
-  <%= text_field_tag :zip %>
-  <%= submit_tag 'Submit' %>
+  <div class="field">
+    <%= label_tag :name, nil, class: "label" %>
+    <%= text_field_tag :name, nil, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :address, nil, class: "label" %>
+    <%= text_field_tag :address, nil, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :city, nil, class: "label" %>
+    <%= text_field_tag :city, nil, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :state, nil, class: "label" %>
+    <%= text_field_tag :state, nil, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :zip, nil, class: "label" %>
+    <%= text_field_tag :zip, nil, class: "input" %>
+  </div>
+  <%= submit_tag 'Submit', class: "button" %>
 <% end %>
+
+
+<!-- <div class="field">
+  <label class="label">Label</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input">
+  </div>
+  <p class="help">This is a help text</p>
+</div> -->
