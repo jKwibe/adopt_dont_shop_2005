@@ -1,9 +1,24 @@
 
-<%= form_tag "/shelters/#{@shelter.id}", method: :patch do %>
-  <%= text_field_tag :name, @shelter.name %>
-  <%= text_field_tag :address, @shelter.address %>
-  <%= text_field_tag :city, @shelter.city%>
-  <%= text_field_tag :state, @shelter.state %>
-  <%= text_field_tag :zip, @shelter.zip %>
-  <%= submit_tag 'update' %>
+<%= form_tag"/shelters/#{@shelter.id}", method: :patch do %>
+  <div class="field">
+    <%= label_tag :name, nil, class: "label" %>
+    <%= text_field_tag :name, @shelter.name, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :address, nil, class: "label" %>
+    <%= text_field_tag :address, @shelter.address, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :city, nil, class: "label" %>
+    <%= text_field_tag :city, @shelter.city, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :state, nil, class: "label" %>
+    <%= text_field_tag :state, @shelter.state, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :zip, nil, class: "label" %>
+    <%= text_field_tag :zip, @shelter.zip, class: "input" %>
+  </div>
+  <%= submit_tag 'update', class: "button" %>
 <% end %>

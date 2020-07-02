@@ -1,9 +1,2 @@
-<% @pets.each do |pet| %>
-  <h3><%= pet.shelter.name %></h3>
-  <p><%= pet.name %></p>
-  <p><%= pet.age %></p>
-  <p><%= pet.sex %></p>
-  <p><%= pet.image %></p>
-  <p><%= pet.status %></p>
-  <p><%= pet.description %></p>
-<% end %>
+
+<%= render 'partials/cards' %>

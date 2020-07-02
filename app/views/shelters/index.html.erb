@@ -1,5 +1,15 @@
 <% @shelters.each do |shelter| %>
-  <h3><%= shelter.name %></h3>
+
+  <div class="card">
+    <a href="/shelters/<%= shelter.id %>" >
+
+    <div class="card-content">
+      <div class="content">
+        <p><%= shelter.name %></p>
+      </div>
+    </div>
+  </a>
+  </div>
 <% end %>
 
-<%= link_to "New Shelter", "/shelters/new" %>
+<%= link_to "New Shelter", "/shelters/new", class: "button" %>
