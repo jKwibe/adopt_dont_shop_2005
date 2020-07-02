@@ -1,10 +1,23 @@
 
-<%= @pet.name %>
-<%= @pet.image %>
-<%= @pet.age %>
-<%= @pet.sex %>
-<%= @pet.description %>
-<%= @pet.status %>
-
-<%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %>
-<%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %>
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      <%= @pet.name %>
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <figure class="image is-128x128 pet_image">
+        <img src=<%= @pet.image %> alt=<%= @pet.name %> >
+      </figure>
+      <p><span>Age:</span> <%= @pet.age %></p>
+      <p><span>Sex:</span> <%= @pet.sex %></p>
+      <p><span>Status:</span><%= @pet.status %></p>
+      <p><span>Description:</span> <%= @pet.description %></p>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <%= link_to "Update Pet", "/pets/#{@pet.id}/edit", class: "card-footer-item" %>
+    <%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete , class: "card-footer-item" %>
+  </footer>
+</div>

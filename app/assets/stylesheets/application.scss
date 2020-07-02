@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bulma";
+
+
+.pet_show{
+  height: 100px;
+  .column{
+    figure{
+      height: 100px !important;
+    }
+  }
+}

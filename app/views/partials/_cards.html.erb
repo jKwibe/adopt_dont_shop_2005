@@ -1,0 +1,26 @@
+
+<div class="cards">
+<div class="columns is-multiline">
+    <% @pets.each do |pet| %>
+    <div class="column is-3 ">
+      <a href="/pets/<%= pet.id %>">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src=<%= pet.image %> alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <h3><%= pet.shelter.name %></h3>
+        <p><span>Name: </span><%= pet.name %></p>
+        <p><span>Age: </span><%= pet.age %></p>
+        <p><span>Sex: </span><%= pet.sex %></p>
+        <span class="tag is-primary"><%= pet.status %> </span></p>
+        <p><span>Description: </span><%= pet.description %></p>
+        </div>
+      </div>
+      </a>
+    </div>
+    <% end %>
+</div>
+</div>

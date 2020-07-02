@@ -14,10 +14,8 @@ RSpec.describe '', type: :feature do
     expect(page).to have_content(@pet_1.name)
     expect(page).to have_content(@pet_1.age)
     expect(page).to have_content(@pet_1.sex)
-    expect(page).to have_content(@pet_1.image)
     expect(page).to have_content(@pet_3.name)
     expect(page).to have_content(@pet_3.age)
     expect(page).to have_content(@pet_3.sex)
-    expect(page).to have_content(@pet_3.image)
   end
 end
