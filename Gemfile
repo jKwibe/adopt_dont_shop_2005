@@ -33,9 +33,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bulma-rails', '~> 0.9.0'
 
+gem 'faker', '~> 2.13'
+gem 'factory_bot_rails', '~> 6.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'faker', '~> 2.13'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'capybara'
@@ -43,7 +44,6 @@ group :development, :test do
   gem 'pry'
   gem 'simplecov'
   gem 'shoulda-matchers'
-  gem 'factory_bot_rails', '~> 6.0'
   gem 'table_print', '~> 1.5', '>= 1.5.7'
   gem 'better_errors', '~> 2.7', '>= 2.7.1'
 end
