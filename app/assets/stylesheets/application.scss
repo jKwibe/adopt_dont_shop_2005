@@ -15,7 +15,10 @@
  */
 
  @import "bulma";
-
+body{
+  background: #eee;
+  min-width: 100vh;
+}
 
 .pet_show{
   height: 100px;
@@ -24,4 +27,12 @@
       height: 100px !important;
     }
   }
+}
+
+.buttons.btn{
+  justify-content: center;
+}
+
+.card.shelter{
+  margin: 1.2rem;
 }

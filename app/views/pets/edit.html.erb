@@ -1,24 +1,39 @@
-
+<section class="hero is-medium has-text-centered">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @pet.shelter.name %>
+      </h1>
+      <h2 class="subtitle">
+        edit pet: <%= @pet.name %>
+      </h2>
+    </div>
+  </div>
+</section>
 <%= form_tag "/pets/#{@pet.id}", method: :patch  do %>
   <div class="field">
     <%= label_tag :name, nil, class: "label" %>
     <%= text_field_tag :name, @pet.name, class: "input" %>
   </div>
-  <div class="field">
-    <%= label_tag :age,nil , class: "label" %>
-    <%= text_field_tag :age, @pet.age, class: "input" %>
+  <div class="field is-grouped">
+  <p class="control is-expanded">
+      <%= label_tag :age,nil , class: "label" %>
+      <%= text_field_tag :age, @pet.age, class: "input" %>
+  </p>
+  <div class="control">
+    <%= label_tag :sex,nil , class: "label" %>
+    <div class="select">
+      <%= select_tag :sex, options_for_select( ["Other", "Male", "Female"])%>
+    </div>
   </div>
-  <div class="field">
-    <%= label_tag :sex, nil, class: "label" %>
-    <%= text_field_tag :sex, @pet.sex, class: "input" %>
-  </div>
+</div>
   <div class="field">
     <%= label_tag :image, nil, class: "label" %>
     <%= text_field_tag :image, @pet.image, class: "input" %>
   </div>
   <div class="field">
     <%= label_tag :description, nil, class: "label" %>
-    <%= text_field_tag :description, @pet.description, class: "input" %>
+    <%= text_area_tag :description, @pet.description, class: "textarea", rows: 10 %>
   </div>
   <%= submit_tag 'Update Pet', class: "button" %>
 <% end %>

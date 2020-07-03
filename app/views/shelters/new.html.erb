@@ -1,5 +1,13 @@
-
-<%= form_tag('/shelters') do %>
+<section class="hero is-medium has-text-centered">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Add Shelter
+      </h1>
+    </div>
+  </div>
+</section>
+<%= form_tag '/shelters', method: :post do %>
   <div class="field">
     <%= label_tag :name, nil, class: "label" %>
     <%= text_field_tag :name, nil, class: "input" %>

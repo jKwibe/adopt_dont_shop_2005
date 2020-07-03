@@ -1,4 +1,12 @@
-
+<section class="hero is-medium has-text-centered">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Edit Shelter
+      </h1>
+    </div>
+  </div>
+</section>
 <%= form_tag"/shelters/#{@shelter.id}", method: :patch do %>
   <div class="field">
     <%= label_tag :name, nil, class: "label" %>
