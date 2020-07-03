@@ -1,12 +1,18 @@
 <% @shelters.each do |shelter| %>
 
-  <div class="card">
+  <div class="card" id="shelter_<%= shelter.id %>">
     <a href="/shelters/<%= shelter.id %>" >
 
     <div class="card-content">
       <div class="content">
         <p><%= shelter.name %></p>
+        <div class="buttons">
+          <%= button_to "Delete", "/shelters/#{shelter.id}", method: :delete, class: "button is-danger is-rounded" , data:{confirm: "You are deleting #{shelter.name}. Are you sure?"}%>
+          <%= button_to "Edit", "/shelters/#{shelter.id}/edit", method: :get, class: "button is-primary is-rounded"%>
+        </div>
       </div>
+
+
     </div>
   </a>
   </div>

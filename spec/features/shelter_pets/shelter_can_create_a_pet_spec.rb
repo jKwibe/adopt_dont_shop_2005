@@ -28,14 +28,17 @@ RSpec.describe 'Shelter can create a pet' do
     fill_in :image , with: "percy.jpg"
 
     click_on "Create Pet"
-
+    new_pet = Pet.last
     expect(current_path).to eq("/pets")
 
-    expect(page).to have_content("adoptible")
-    expect(page).to have_content("Percy")
-    expect(page).to have_content("male")
-    expect(page).to have_content("Lorem ipsum dolor sit amet")
-    expect(page).to have_content("8")
-    expect(page).to have_content("percy.jpg")
+    within "div#pet_#{new_pet.id}" do
+      expect(page).to have_link(@shelter_2.name)
+      expect(page).to have_content("adoptible")
+      expect(page).to have_content("Percy")
+      expect(page).to have_content("male")
+      expect(page).to have_content("Lorem ipsum dolor sit amet")
+      expect(page).to have_content("8")
+      expect(page).to have_css("img[src*='percy.jpg']")
+    end
   end
 end

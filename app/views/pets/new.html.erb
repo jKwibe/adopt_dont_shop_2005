@@ -1,9 +1,24 @@
 
-<%= form_tag "/shelters/#{@shelter_id}/pets" do %>
-  <%= text_field_tag :name %>
-  <%= text_field_tag :age %>
-  <%= text_field_tag :description%>
-  <%= text_field_tag :sex %>
-  <%= text_field_tag :image %>
-  <%= submit_tag 'Create Pet' %>
+<%= form_tag "/shelters/#{@shelter_id}/pets", method: :post  do %>
+  <div class="field">
+    <%= label_tag :name, nil, class: "label" %>
+    <%= text_field_tag :name, nil, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :age, nil, class: "label" %>
+    <%= text_field_tag :age, nil, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :sex, nil, class: "label" %>
+    <%= text_field_tag :sex, nil, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :image, nil, class: "label" %>
+    <%= text_field_tag :image, nil, class: "input" %>
+  </div>
+  <div class="field">
+    <%= label_tag :description, nil, class: "label" %>
+    <%= text_field_tag :description, nil, class: "input" %>
+  </div>
+  <%= submit_tag 'Create Pet', class: "button" %>
 <% end %>
