@@ -13,15 +13,18 @@ RSpec.describe "show all pets" do
   it 'shows all pets' do
     visit "/pets"
 
-    expect(page).to have_content(@pet_1.shelter.name)
-    expect(page).to have_content(@pet_2.shelter.name)
-    expect(page).to have_content(@pet_1.name)
-    expect(page).to have_content(@pet_1.age)
-    expect(page).to have_content(@pet_1.sex)
-    expect(page).to have_content(@pet_2.name)
-    expect(page).to have_content(@pet_2.age)
-    expect(page).to have_content(@pet_2.sex)
+    within "div#pet_#{@pet_1.id}" do
+      expect(page).to have_link(@pet_1.shelter.name)
+      expect(page).to have_content(@pet_1.name)
+      expect(page).to have_content(@pet_1.age)
+      expect(page).to have_content(@pet_1.sex)
+    end
 
+    within "div#pet_#{@pet_2.id}" do
+      expect(page).to have_link(@pet_2.shelter.name)
+      expect(page).to have_content(@pet_2.name)
+      expect(page).to have_content(@pet_2.age)
+      expect(page).to have_content(@pet_2.sex)
+    end
   end
-
 end

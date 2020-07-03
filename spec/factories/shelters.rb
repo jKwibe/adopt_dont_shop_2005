@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :shelter do
-    name { Faker::DcComics.title }
+    name { Faker::Company.name }
     address { Faker::Address.full_address }
     city { Faker::Address.city }
     state { Faker::Address.state_abbr }
