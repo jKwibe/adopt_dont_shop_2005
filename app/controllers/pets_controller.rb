@@ -1,10 +1,10 @@
 class PetsController < ApplicationController
+  before_action :find_pet, only: [:show, :update,:edit]
   def index
     @pets = Pet.all
   end
 
   def show
-    @pet = Pet.find(params[:pet_id])
   end
 
   def new
@@ -18,11 +18,9 @@ class PetsController < ApplicationController
   end
 
   def edit
-    @pet = Pet.find(params[:pet_id])
   end
 
   def update
-    @pet = Pet.find(params[:pet_id])
     @pet.update(pet_params)
 
     redirect_to "/pets/#{@pet.id}"
@@ -36,5 +34,9 @@ class PetsController < ApplicationController
   private
   def pet_params
     params.permit(:name, :age, :sex, :image, :description)
+  end
+
+  def find_pet
+    @pet = Pet.find(params[:pet_id])
   end
 end
