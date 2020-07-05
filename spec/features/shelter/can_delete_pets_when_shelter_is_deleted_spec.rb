@@ -21,5 +21,8 @@ RSpec.describe 'delere asociated pets with shelter' , type: :feature do
 
     expect(page).not_to have_content("persy")
     expect(page).not_to have_content("holie")
+
+    expect(page).to have_content("piper")
+    expect(page).to have_content("Harry")
   end
 end

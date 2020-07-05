@@ -1,32 +1,43 @@
-<section class="hero is-medium has-text-centered">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Add Shelter
-      </h1>
+
+<section class="form_container">
+  <div class="hero is-medium has-text-centered">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Add Shelter
+        </h1>
+      </div>
     </div>
   </div>
-</section>
-<%= form_tag '/shelters', method: :post do %>
+  <%= form_tag"/shelters", method: :post do %>
   <div class="field">
     <%= label_tag :name, nil, class: "label" %>
     <%= text_field_tag :name, nil, class: "input" %>
   </div>
   <div class="field">
     <%= label_tag :address, nil, class: "label" %>
-    <%= text_field_tag :address, nil, class: "input" %>
+    <%= text_field_tag :address,  nil, class: "input" %>
   </div>
-  <div class="field">
-    <%= label_tag :city, nil, class: "label" %>
-    <%= text_field_tag :city, nil, class: "input" %>
-  </div>
-  <div class="field">
-    <%= label_tag :state, nil, class: "label" %>
-    <%= text_field_tag :state, nil, class: "input" %>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <p class="control is-expanded">
+          <%= label_tag :city, nil, class: "label" %>
+          <%= text_field_tag :city, nil, class: "input" %>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control is-expanded">
+          <%= label_tag :state, nil, class: "label" %>
+          <%= text_field_tag :state, nil, class: "input" %>
+        </p>
+      </div>
+    </div>
   </div>
   <div class="field">
     <%= label_tag :zip, nil, class: "label" %>
     <%= text_field_tag :zip, nil, class: "input" %>
   </div>
-  <%= submit_tag 'Submit', class: "button" %>
-<% end %>
+  <%= submit_tag 'Submit', class: "button is-primary" %>
+  <% end %>
+</section>
