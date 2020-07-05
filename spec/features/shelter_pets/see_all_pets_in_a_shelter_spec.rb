@@ -17,5 +17,6 @@ RSpec.describe '', type: :feature do
     expect(page).to have_content(@pet_3.name)
     expect(page).to have_content(@pet_3.age)
     expect(page).to have_content(@pet_3.sex)
+    expect(page).to have_content("2")
   end
 end
