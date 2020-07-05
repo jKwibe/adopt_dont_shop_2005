@@ -4,9 +4,9 @@ RSpec.describe 'shelter can update pet', type: :feature do
   before :each do
     @shelter_1 = create(:shelter)
     @shelter_2 = create(:shelter)
-    @pet_1 = create(:pet, name: "persy", age: 8, sex: "M", shelter: @shelter_1)
-    @pet_2 = create(:pet, name: "piper", age: 12, sex: "F", shelter: @shelter_2)
-    @pet_3 = create(:pet, name: "holie", age: 4, sex: "F", shelter: @shelter_1)
+    @pet_1 = create(:pet, name: "persy", age: 8, sex: "male", shelter: @shelter_1)
+    @pet_2 = create(:pet, name: "piper", age: 12, sex: "female", shelter: @shelter_2)
+    @pet_3 = create(:pet, name: "holie", age: 4, sex: "female", shelter: @shelter_1)
     @pet_4 = create(:pet , shelter:@shelter_2 )
   end
 
@@ -23,7 +23,7 @@ RSpec.describe 'shelter can update pet', type: :feature do
 
     fill_in :name, with: "Harry Molly"
     fill_in :age, with: "4"
-    fill_in :sex, with: "M"
+    select "male", from: :sex
 
     click_on "Update Pet"
 
@@ -31,6 +31,6 @@ RSpec.describe 'shelter can update pet', type: :feature do
 
     expect(page).to have_content("Harry Molly")
     expect(page).to have_content("4")
-    expect(page).to have_content("M")
+    expect(page).to have_content("male")
   end
 end
