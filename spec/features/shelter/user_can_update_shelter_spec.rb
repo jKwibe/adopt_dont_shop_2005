@@ -3,8 +3,8 @@ require "rails_helper"
 
 RSpec.describe "Update shelter" do
   before :each do
-    @shelter_1 = create(:shelter)
-    @shelter_2 = create(:shelter)
+    @shelter_1 = create(:shelter, state: "CO")
+    @shelter_2 = create(:shelter, state: "CA")
   end
   it 'shelter show has link to edit' do
     visit "/shelters/#{@shelter_1.id}"

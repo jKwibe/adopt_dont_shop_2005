@@ -21,7 +21,7 @@
     <div class="control">
       <%= label_tag :sex,nil , class: "label" %>
       <div class="select">
-        <%= select_tag :sex, options_for_select( ["Other", "Male", "Female"])%>
+        <%= select_tag :sex, options_for_select(Pet.sexes.map{|key, value| [key.capitalize, value]})%>
       </div>
     </div>
   </div>
