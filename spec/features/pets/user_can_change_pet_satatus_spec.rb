@@ -20,6 +20,13 @@ RSpec.describe "user can change pet status", type: :feature do
     within "div.card-content" do
       expect(page).to have_content("pending")
     end
+
+    click_link "change to adoptible"
+
+    expect(current_path).to eq("/pets/#{@pet_2.id}")
+    within "div.card-content" do
+      expect(page).to have_content("adoptible")
+    end
   end
 
 end
