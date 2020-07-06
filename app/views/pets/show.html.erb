@@ -22,5 +22,6 @@
   <footer class="card-footer">
     <%= link_to "Update Pet", "/pets/#{@pet.id}/edit", class: "card-footer-item" %>
     <%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete , class: "card-footer-item" %>
+    <%= link_to "change to pending", "/pets/#{@pet.id}/adoptible", method: :patch , class: "card-footer-item" %>
   </footer>
 </div>
