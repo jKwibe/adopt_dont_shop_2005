@@ -1,6 +1,9 @@
 class SheltersController < ApplicationController
   before_action :find_shelter, only: [:show, :edit, :update, :pets]
   def index
+    if params[:sort]
+      return @shelters = Shelter.order(:name)
+    end
     @shelters = Shelter.all
   end
 
