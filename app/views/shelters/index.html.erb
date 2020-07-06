@@ -8,6 +8,7 @@
     </div>
   </div>
 </section>
+<%= link_to "sort A-Z", "/shelters?sort=true", class: "button is-primary" %>
 <% @shelters.each do |shelter| %>
 
   <div class="card shelter" id="shelter_<%= shelter.id %>">
