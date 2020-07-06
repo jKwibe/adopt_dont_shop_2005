@@ -23,7 +23,7 @@ RSpec.describe 'Shelter can create a pet' do
 
     fill_in :name , with: "Percy"
     fill_in :description , with: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed diam nec urna faucibus semper. Donec eget ipsum a sapien tincidunt vestibulum vel non purus."
-    fill_in :sex , with: "male"
+    select "male", from: :sex
     fill_in :age , with: "8"
     fill_in :image , with: "percy.jpg"
 
